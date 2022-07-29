@@ -1,0 +1,10 @@
+.card{
+    padding: 20px;
+    margin: 50px;
+}
+.card img{
+    width:300px;
+    height:300px;
+    margin-bottom:15px;
+  transition: 0.3s ease-in-out;
+}

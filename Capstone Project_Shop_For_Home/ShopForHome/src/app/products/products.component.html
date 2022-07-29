@@ -1,0 +1,108 @@
+<!-- Displaying the All the products -->
+<div style="margin-top:10px;width: 100%; background-color: darkorange;">
+    <div  style="height:50px;width:100%;display: flex; justify-content: space-around;padding-top: 6px; background-color: darkseagreen;">
+
+        <div class="item" >
+            <a (click)="filter('')">
+                <!-- <img style="width:100px;margin-top: 12px;"
+                    src="https://th.bing.com/th/id/R.978e8776bf4c8da1fe4e817b6af6756d?rik=KrZMuC87ZZ8dIw&riu=http%3a%2f%2fwww.royhomedesign.com%2fwp-content%2fuploads%2f2017%2f03%2fthe-best-wooden-furniture-material-in-maple-wood-dining-room-furniture-sets-for-home-furniture-interior-decoration.jpg&ehk=RVg29DIvbYGv95YV3qm%2bcqxi7eNhH5DKVBBIE9cUCIs%3d&risl=&pid=ImgRaw&r=0"
+                    alt=""> -->
+            <button mat-raised-button style="margin-right:20px">All Products</button>
+            </a>
+        </div>       
+
+        <!-- Displaying the home icon -->
+        <!-- <div class="item">
+            <a (click)="filter('Home')">
+                <img style="width:100px;margin-top: 12px;"
+                    src="https://th.bing.com/th/id/R.978e8776bf4c8da1fe4e817b6af6756d?rik=KrZMuC87ZZ8dIw&riu=http%3a%2f%2fwww.royhomedesign.com%2fwp-content%2fuploads%2f2017%2f03%2fthe-best-wooden-furniture-material-in-maple-wood-dining-room-furniture-sets-for-home-furniture-interior-decoration.jpg&ehk=RVg29DIvbYGv95YV3qm%2bcqxi7eNhH5DKVBBIE9cUCIs%3d&risl=&pid=ImgRaw&r=0"
+                    alt="">
+                <h6>Home </h6>
+            </a>
+        </div> -->
+        <!-- Displaying the grocery Icon -->
+        <!-- <div class="item">
+            <a (click)="filter('Grocery')">
+                <img style="width:100px;margin-top: 12px;"
+                    src="https://th.bing.com/th?q=Grocery+Food+Products&dc=2&w=100&h=100&c=1&rs=1&qlt=90&cb=1&dpr=1.5&pid=InlineBlock&mkt=en-IN&cc=IN&setlang=en&adlt=moderate&t=1&mw=247"
+                    alt="">
+                <h6> Grocery </h6>
+            </a>
+        </div> -->
+        <!-- Displaying the Mobile Icon -->
+        <div class="item">
+            <a (click)="filter('Mobiles')">
+                <!-- <img style="width:100px;margin-top: 12px;"
+                    src="https://th.bing.com/th/id/OIP.TNvboV7W8-PlJZH1WM2Q2gHaEo?w=251&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7"
+                    alt=""> -->
+                    <button mat-raised-button style="margin-right:20px">Mobiles</button>
+            </a>
+        </div>
+        <!-- Displaying the Fashion Icon -->
+        <div class="item">
+            <a (click)="filter('Fashion')">
+                <!-- <img style="width:100px;margin-top: 12px;"
+                    src="https://th.bing.com/th/id/OIP.uvsLSzf2z1jb3MO5lO7wVwHaDS?w=349&h=155&c=7&r=0&o=5&dpr=1.5&pid=1.7"
+                    alt=""> -->
+                    <button mat-raised-button style="margin-right:20px">Fashion</button>
+            </a>
+        </div>
+        <!-- Displaying the Beauty Icon -->
+        <div class="item">
+            <a (click)="filter('Beauty')">
+                <!-- <img style="width:100px;margin-top: 12px;"
+                    src="https://th.bing.com/th?q=Beauty+Stuff&w=120&h=120&c=1&rs=1&qlt=90&cb=1&dpr=1.5&pid=InlineBlock&mkt=en-IN&cc=IN&setlang=en&adlt=moderate&t=1&mw=247"
+                    alt=""> -->
+                    <button mat-raised-button style="margin-right:20px">Beauty</button>
+            </a>
+        </div>
+        <!-- Displaying the Appliances Icon -->
+        <div class="item">
+            <a (click)="filter('Appliances')">
+                <!-- <img style="width:100px;margin-top: 12px;"
+                    src="https://th.bing.com/th/id/OIP.-Gs7xxXxJ6-zkkefB8yNJAHaFj?w=233&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7"
+                    alt=""> -->
+                    <button mat-raised-button style="margin-right:20px">Appliances</button>
+            </a>
+        </div>
+
+        <!-- Displaying the Sports Icon -->
+        <div class="item">
+            <a (click)="filter('Sports')">
+                <!-- <img style="width:100px;margin-top: 12px;"
+                    src="https://th.bing.com/th/id/OIP.vh6I1P1DZcDOuVWQi-mVPQHaEs?w=246&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7"
+                    alt=""> -->
+                    <button mat-raised-button style="margin-right:20px">Sports</button>
+            </a>
+        </div>
+        <!-- Displaying the Electronics Icon -->
+        <div class="item">
+            <a (click)="filter('Electronics')">
+                <!-- <img style="width:100px;margin-top: 12px;"
+                    src="https://th.bing.com/th/id/OIP.x05m1nYrXJujIA20Olzg9gHaEa?pid=ImgDet&rs=1" alt=""> -->
+                    <button mat-raised-button style="margin-right:20px">Electronics</button>
+            </a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <ng-container *ngFor="let product of products">
+                <div class="card col-md-3" *ngIf="product.category==category||category==''">
+                    <img class="card-img-top" src='../../assets/{{product.url}}'>
+                    <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">
+                        {{product.pname}}</h5>
+                    <p><strong>Price:</strong>{{product.price | currency:'INR'}}</p>
+                    <!-- <button class="btn btn-primary" (click)="addtocart(product)">Add to Cart</button> -->
+                    <div style="justify-content: center;text-align:center">
+                        <button class="btn btn-success" *ngIf="service.loggedIn() && !service.isAdminloggedin()" (click)="addtocart(product)" >Add to Cart</button>
+                    </div>
+                    <!-- <button class="btn btn-primary" (click)="addToWishlist(product)">Add to Wishlst</button> -->
+                    <div style=" margin-top:10px;justify-content: center;text-align:center">
+                        <button class="btn btn-success" *ngIf="service.loggedIn() && !service.isAdminloggedin()" (click)="addToWishlist(product)">Add to Wishlist</button>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</div>

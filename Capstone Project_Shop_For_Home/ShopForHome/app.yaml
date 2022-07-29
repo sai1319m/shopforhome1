@@ -1,0 +1,7 @@
+runtime: nodejs16
+handlers:
+  - url: /
+    static_files: dist/shop-for-home/index.html
+    upload: dist/shop-for-home/index.html
+  - url: /
+    static_dir: dist/shop-for-home

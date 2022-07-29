@@ -1,0 +1,31 @@
+<!-- New user Registration -->
+<mat-card style="margin-top:80px;margin-left: 120px;margin-right: 500px;
+padding-left: 10px;font: italic bold 30px Georgia, serif;font-size: large;border-radius: 10px;justify-content: center;text-align: center;background-color: lightseagreen;">
+    <mat-card-title>User Registeration</mat-card-title>
+    <form #UserRef="ngForm" (ngSubmit)="storeUser(UserRef)">
+        <!-- Input for Email -->
+        <p>
+            <mat-form-field style="width:400px">
+                <input matInput type="text" name="email" id="exampleInputEmail1" placeholder="Enter email here" required
+                    ngModel />
+                <mat-error>Enter Email</mat-error>
+                <mat-hint>Email</mat-hint>
+            </mat-form-field>
+        </p>
+        <!-- Input for Password -->
+        <p>
+            <mat-form-field style="width:400px">
+                <input matInput type="password" name="password" id="exampleInputPassword1" placeholder="Enter Password here"
+                    required ngModel />
+                <mat-error>Enter Password</mat-error>
+                <mat-hint>Password</mat-hint>
+            </mat-form-field>
+        </p>
+        <button  class="btn btn-success" type="submit" style="padding-top:10px;padding-left: 5px;font: italic bold 30px Georgia, serif;font-size: large;border-radius: 10px;justify-content: center;text-align: center;">SignUp</button>
+    </form>
+    <!-- <a style="color:#fff;margin-top: 10px;" routerLink="/userlogin">Already Registered? Click to SignIn!!</a>
+    <br /> -->
+    <span style="color:red;font-size: 20px;">{{storeMsg}}</span>
+</mat-card>
+<a mat-raised-button style="margin-left:550px" color="warn" routerLink="/userlogin" style="font: italic bold 30px Georgia, serif;font-size: large;border-radius: 10px;justify-content: center;text-align: center; margin-top: 5px;margin:10px;margin-left: 500px;" >Already Registered? Click to
+    SignIn!!</a><br />

@@ -1,0 +1,17 @@
+<div class="container" >
+    <div class="row">
+        <ng-container *ngFor="let product of products">
+            <div class="card col-md-3">
+                <img class="card-img-top" src='../../assets/{{product.url}}' style="height: 300px; width:300px">
+                <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">
+                    {{product.pname}}</h5>
+                <p><strong>Price:</strong>{{product.price}}</p>
+                <div style="justify-content: center;text-align:center">
+                <button class="btn btn-success" *ngIf="service.loggedIn() && !service.isAdminloggedin()" (click)="addtocart(product)">Add to Cart</button>
+                </div>
+                <div style="margin-top:10px;justify-content: center;text-align:center">
+                <button class="btn btn-success" *ngIf="service.loggedIn() && !service.isAdminloggedin()" (click)="addToWishlist(product)">Add to Wishlst</button>
+                </div>
+            </div>
+        </ng-container>
+    </div>

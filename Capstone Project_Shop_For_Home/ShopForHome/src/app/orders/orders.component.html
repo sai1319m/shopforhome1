@@ -1,0 +1,64 @@
+<h1 style="margin-top:20px;background-color: lightpink; text-align:center;justify-content: center;height:100px;padding-top:15px;">Orders List</h1>
+<ng-container *ngIf="orders.length !=0">
+    <div class="container">
+        <div class="card-table">
+            <div class="cart-order">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Sr.No</th>
+                            <th>Name</th>
+                            <th>Phone No.</th>
+                            <th>Delivery Address</th>
+                            <th>Product Name</th>
+                            <th>Product Image</th>
+                            <th>Price</th>
+                            <th>Category</th>
+                            <th>Quantity</th>
+                            <th>Total</th>
+                            
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let order of orders; let i = index">
+                            <td>{{i+1}}</td>
+                            <td>{{order.name }}</td>
+                            <td>{{order.phNo}}</td>
+                            <td>{{order.address}}</td>
+                            <td>{{order.pname}}</td>
+                            <td><img class="card-img-top" src='../../assets/{{order.url}}' height=50px />
+                            </td>
+                            <td>{{order.price | currency:'INR'}}</td>
+                            <td>{{order.category}}</td>
+                            <td style="width: 25%;">{{order.count}}
+                                
+                            </td>
+                            <td style="width: 25%;">{{order.total | currency:'INR'}} </td>
+                            <td>
+                                <button (click)="cancel(order)" class="btn btn-danger">Cancel</button>
+                            </td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+   
+</ng-container>
+
+<ng-container *ngIf="orders.length==0">
+    <div class="container">
+        <div class="card">
+            <h5 class="card-title">My Cart</h5>
+        </div>
+        <div class="center" style="margin-top:250px">
+            <img src="https://rukminim1.flixcart.com/www/800/800/promos/16/05/2019/d438a32e-765a-4d8b-b4a6-520b560971e8.png?q=90"
+                alt="">
+            <h4>Your Orders is Empty!</h4>
+            <h6>Add Item to Your Cart</h6>
+            <button routerLink="/orders" class="btn btn-primary">Shop Now</button>
+        </div>
+    </div>
+</ng-container>

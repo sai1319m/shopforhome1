@@ -1,0 +1,71 @@
+
+<div class="container"style="background-color: lightblue;">
+    <form >
+        <div class="row">
+            <div class="col">
+                <h1 >Delivery Address</h1>
+                <div class="inputBox">
+                    <span>Full Name :</span><br/>
+                    <input type="text"  [(ngModel)]="name" [ngModelOptions]="{standalone: true}">
+                  
+              </div>
+                <div class="inputBox">
+                    <span>Phone Number :</span><br/>
+                    <input type="email"  [(ngModel)]="phNo" [ngModelOptions]="{standalone: true}" >
+                   
+                </div>
+                <div class="inputBox">
+                    <span>Address & PinCode :</span><br/>
+                    <input type="text" [(ngModel)]="pincode" [ngModelOptions]="{standalone: true}">
+                </div>
+                <div class="inputBox">
+                    <span>City :</span><br/>
+                    <input type="text" [(ngModel)]="city" [ngModelOptions]="{standalone: true}">
+                </div>
+                <div class="flex">
+                    <div class="inputBox">
+                        <span>State :</span><br/>
+                        <input type="text" [(ngModel)]="state" [ngModelOptions]="{standalone: true}">
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="row">
+
+            <div class="col">
+                <h1 style="margin: 20px;">Payment</h1>
+                <div class="inputBox">
+                    <span>Cards Accepted:</span><br/>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAeSjPNu1DXH8AUcrHx8U_mUUWVZCH-AgMQX1p-VCo6KGGhVVYBY-r9s4ohaMyr9dzgg&usqp=CAU" alt="">
+                </div>
+                <br>
+                <div class="inputBox">
+                    <span>Card Holder Name:</span><br/>
+                    <input type="text" >
+                </div>
+                <div class="inputBox">
+                    <span>Credit Card Number:</span><br/>
+                    <input type="number" >
+                </div>
+                <div class="inputBox">
+                    <span>Exp Month  & Year:</span><br/>
+                    <input type="text">
+                </div>
+                <div class="flex">
+                    <div class="inputBox">
+                        <span>CVV:</span><br/>
+                        <input type="text">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br/>
+        <button  style="margin:5px;" type="Submit"  (click)="payNow()"  class="btn btn-success ">Pay Now</button>        
+    
+        <br/>
+        <span style="color:red;font-size: 20px;">{{msg}}</span>
+    </form>
+</div>    
+
+

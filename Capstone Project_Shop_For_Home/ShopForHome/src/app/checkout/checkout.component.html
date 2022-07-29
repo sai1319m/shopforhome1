@@ -1,0 +1,32 @@
+<!-- Generating the Billing Amount -->
+<h1 style="text-align: center;justify-content:center;background-color:indianred;margin-top: 10px;">Cart Summary</h1>
+<section id="cart-bottom" class="container">
+    <div class="row">
+
+        <div class="total  col-lg-6 col-md-6 col-12 ">
+            <div>
+                <h5 style="text-align: center;justify-content:center;">CART TOTAL</h5>
+                <div class="d-flex justify-content-between">
+                    <h6>GRAND TOTAL </h6>
+                    <p>{{grandTotal | currency:'INR'}}</p>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <h6>Shipping Amount</h6>
+                    <p>{{shipping}}</p>
+                </div>
+                <hr class="second-hr">
+                <div class="d-flex justify-content-between">
+                    <h6>Coupon discount</h6>
+                    <p>{{ getDiscount() | currency:'INR'}}</p>
+                </div>
+
+                <div class="d-flex justify-content-between">
+                    <h6>Total</h6>
+                    <p>{{getOrderTotal() | currency:'INR'}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br/>
+    <button routerLink="/payment" class="btn btn-success"style="margin-left:800px">Proceed to Payment</button>

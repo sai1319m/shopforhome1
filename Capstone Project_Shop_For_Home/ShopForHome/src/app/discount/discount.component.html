@@ -1,0 +1,27 @@
+
+<h1 style="text-align: center; color: black;">Coupons Available for you</h1>
+
+
+
+<table  class="table table-strapped ">
+
+<thead>
+    <th>Coupon Description</th>
+    <th>Discount Amount</th>
+    <th>Coupon code</th>
+    <th>Apply?</th>
+</thead>
+
+<tr *ngFor="let discount of userdiscount">
+    <td>{{discount.discountName}}</td>
+    <td>{{discount.discountAmount}}</td>
+    <td>{{discount.discountCode}}</td>
+    <td><button class="btn btn-primary" (click)="avail(discount)" style="color:black ;margin-top:10px;">Apply Now</button></td>
+</tr>
+</table>
+
+<div style="display: flex; justify-content:center">
+<button style="margin: auto;" class="btn btn-primary" [routerLink]="['..','checkout']" >Continue without Applying </button>
+</div>
+
+

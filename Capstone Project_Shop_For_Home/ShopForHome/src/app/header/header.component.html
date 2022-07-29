@@ -1,0 +1,36 @@
+<!-- Displaying the Title and required buttons -->
+<header>
+   <mat-toolbar style="background-color: aquamarine;width: auto;height: 150px;">
+    <mat-toolbar-row>
+      <h1 style="text-align: center;justify-content: center;margin: auto; margin-top: 3%; font-size: larger;font-size: 50px;">Shop For Home</h1>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+    <mat-toolbar style="margin-top:10px;width: 100%;height:5%;background-color: aqua;padding: 1%;font: italic bold 30px Georgia, serif;
+    font-size: large;border-radius: 20px;justify-content: center;text-align: center;">
+    <mat-toolbar-row style="height:10%;width:100%;">
+      <input type="text" class="form-control" [(ngModel)]="searchTerm" 
+        placeholder="Search Products" style="width: 350px;">
+        <button mat-raised-button style="margin-right:150px" (click)="search()">Search</button>
+      
+      <div style="display: flex;justify-content: space-evenly;font: italic bold 30px Georgia, serif;
+      font-size: large;border-radius: 20px;">
+      <button mat-raised-button style="margin-right:100px" routerLink="products" >Home</button>
+      <button mat-raised-button style="margin-right:100px" routerLink="orders" *ngIf="service.loggedIn() || service.isAdminloggedin()" >Orders</button>
+      <button mat-raised-button style="margin-right:100px" routerLink="userlogin" *ngIf="!service.isAdminloggedin() && !service.loggedIn() ">User</button>
+      <button mat-raised-button style="margin-right:100px" routerLink="adminlogin" *ngIf="!service.isAdminloggedin() && !service.loggedIn()">Admin</button>
+    
+      <div>
+        <button mat-raised-button style="margin-right:100px" *ngIf="service.loggedIn() && !service.isAdminloggedin()" routerLink="cart"
+          class="btn btn-primary">Cart</button>
+      </div>
+      <button mat-raised-button style="margin-right:100px" *ngIf="service.isAdminloggedin()" routerLink="adddiscount">Add Coupon</button>
+      <button mat-raised-button style="margin-right:100px" *ngIf="service.loggedIn() && !service.isAdminloggedin()" routerLink="wishlist">WishList</button>
+      <button mat-raised-button style="margin-right:100px" *ngIf="service.isAdminloggedin()" routerLink="csvupload">Bulk Upload</button>
+      <button mat-raised-button style="margin-right:100px" *ngIf="service.isAdminloggedin()" routerLink="profits">Sales Profits</button>
+      <a mat-raised-button style="margin-right:100px" class="nav-link" routerLink="" *ngIf="service.loggedIn() || service.isAdminloggedin()"
+        (click)="service.logoutUser()" >logout</a>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</header>
